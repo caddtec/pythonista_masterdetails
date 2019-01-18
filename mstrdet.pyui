@@ -5,7 +5,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{38, 131}, {356, 512}}",
+        "frame" : "{{19, 134}, {356, 512}}",
         "class" : "TableView",
         "attributes" : {
           "flex" : "WH",
@@ -13,12 +13,12 @@
           "row_height" : 44,
           "frame" : "{{412, 284}, {200, 200}}",
           "uuid" : "B7FD2D54-86A9-4A3D-B7B5-B880075CABB0",
-          "data_source_number_of_lines" : 1,
-          "class" : "TableView",
           "background_color" : "RGBA(1.0, 1.0, 1.0, 1.0)",
-          "data_source_delete_enabled" : true,
+          "data_source_number_of_lines" : 1,
           "data_source_font_size" : 18,
-          "name" : "tableview_master"
+          "class" : "TableView",
+          "data_source_delete_enabled" : true,
+          "name" : "master_tv"
         },
         "selected" : false
       },
@@ -26,7 +26,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{402, 131}, {575, 512}}",
+        "frame" : "{{387, 134}, {575, 512}}",
         "class" : "TextView",
         "attributes" : {
           "flex" : "WH",
@@ -47,7 +47,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{351, 81}, {43, 42}}",
+        "frame" : "{{335, 84}, {43, 42}}",
         "class" : "Button",
         "attributes" : {
           "name" : "button_additem",
@@ -64,7 +64,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{38, 81}, {43, 42}}",
+        "frame" : "{{23, 84}, {43, 42}}",
         "class" : "Button",
         "attributes" : {
           "font_size" : 15,
@@ -81,11 +81,11 @@
     "frame" : "{{0, 0}, {1024, 768}}",
     "class" : "View",
     "attributes" : {
-      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
-      "enabled" : true,
-      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
-      "custom_class" : "MyView",
       "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "enabled" : true,
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "custom_class" : "MyView",
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
       "flex" : ""
     },
     "selected" : false
