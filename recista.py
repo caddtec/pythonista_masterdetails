@@ -152,10 +152,9 @@ class MDView (ui.View):
             self.name = view_name
         self.data_app = app
         
-        detail_dict = {}
-        detail_items += ['master_list']
+        detail_dict = dict(master_list=self['master_list'])
         for item in detail_items:
-            detail_dict[item] = self[item]
+            detail_dict[item] = self['detail_view'].detail_view[item]
         self.data_app.components = detail_dict
         
         m_view = self.data_app.master_view

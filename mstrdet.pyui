@@ -5,20 +5,14 @@
         "nodes" : [
 
         ],
-        "frame" : "{{387, 134}, {575, 512}}",
-        "class" : "TextView",
+        "frame" : "{{29, 70}, {350, 576}}",
+        "class" : "View",
         "attributes" : {
-          "flex" : "WH",
-          "name" : "textview_detail",
-          "editable" : true,
-          "frame" : "{{412, 284}, {200, 200}}",
-          "spellchecking_type" : "default",
-          "class" : "TextView",
-          "uuid" : "DB1E97D6-FBA8-41A6-A4FA-0979E8205CF5",
-          "alignment" : "left",
-          "autocorrection_type" : "default",
-          "font_size" : 17,
-          "font_name" : "<System>"
+          "name" : "master_list",
+          "frame" : "{{462, 334}, {100, 100}}",
+          "custom_class" : "MyMasterView",
+          "class" : "View",
+          "uuid" : "BE9BF925-6A42-4E94-A521-28CCD43DB03F"
         },
         "selected" : false
       },
@@ -26,26 +20,26 @@
         "nodes" : [
 
         ],
-        "frame" : "{{29, 70}, {350, 576}}",
+        "frame" : "{{387, 70}, {574, 576}}",
         "class" : "View",
         "attributes" : {
-          "custom_class" : "MyMasterView",
+          "custom_class" : "MyDetailView",
           "frame" : "{{462, 334}, {100, 100}}",
           "class" : "View",
-          "name" : "master_list",
-          "uuid" : "BE9BF925-6A42-4E94-A521-28CCD43DB03F"
+          "name" : "detail_view",
+          "uuid" : "74E09A0E-625A-49DA-8FED-F6851D591D66"
         },
-        "selected" : false
+        "selected" : true
       }
     ],
     "frame" : "{{0, 0}, {1024, 768}}",
     "class" : "View",
     "attributes" : {
-      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "custom_class" : "MyView",
       "enabled" : true,
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
       "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
       "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
-      "custom_class" : "MyView",
       "flex" : ""
     },
     "selected" : false

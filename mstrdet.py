@@ -1,5 +1,6 @@
 import recista
 import recmaster
+import recdetail
 import sample
 import ui
 
@@ -39,11 +40,17 @@ class MyMasterView (recmaster.MDMasterListView):
     pass
 
 
+class MyDetailView (recdetail.MDDetailView):
+    pass
+
+
 class MyView (recista.MDView):
     pass
 
 
 v = ui.load_view()
+dv = ui.load_view('sample_detail')
+v['detail_view'].prepare_view(dv)
 v.prepare_view(MyDataApp([sample.ItemDAO('Example', 'My Example Description')]),
                'Experimentation with Master-Details',
                MyTableViewDataSource,
