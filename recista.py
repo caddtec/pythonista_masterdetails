@@ -16,8 +16,8 @@ class MDApp (object):
     
     def check_components(self):
         if self.components != None:
-            if not 'master_tv' in self.components:
-                raise recerror.MDKeyError(msg='Key master_tv not present in detail components')
+            if not 'master_list' in self.components:
+                raise recerror.MDKeyError(msg='Key master_list not present in detail components')
     
     @components.setter
     def components(self, value):
@@ -25,28 +25,24 @@ class MDApp (object):
         self.check_components()
     
     @property
-    def master_tv(self):
+    def master_view(self):
         try:
-            return self.detail['master_tv']
+            return self.detail['master_list']
         except KeyError as kerr:
-            raise recerror.MDKeyError(kerr, 'Unexpected error : Key master_tv ' +
-                                            'should exist as the master tableview.')
+            raise recerror.MDKeyError(kerr, 'Unexpected error : Key master_list ' +
+                                            'should exist as the master view.')
+    
+    @property
+    def master_list(self):
+        return self.master_view.list_view
     
     @property
     def edit_mode(self):
-        try:
-            return self.detail['master_tv'].editing
-        except KeyError as kerr:
-            raise recerror.MDKeyError(kerr, 'Unexpected error : Key master_tv ' +
-                                            'should exist as the master tableview.')
+        return self.master_list.editing
     
     @edit_mode.setter
     def edit_mode(self, value):
-        try:
-            self.detail['master_tv'].editing = value
-        except KeyError as kerr:
-            raise recerror.MDKeyError(kerr, 'Unexpected error : Key master_tv ' +
-                                            'should exist as the master tableview.')
+        self.master_list.editing = value
     
     def __getitem__(self, name):
         return self.data[name]
@@ -157,11 +153,11 @@ class MDView (ui.View):
         self.data_app = app
         
         detail_dict = {}
-        detail_items += ['master_tv']
+        detail_items += ['master_list']
         for item in detail_items:
             detail_dict[item] = self[item]
         self.data_app.components = detail_dict
         
-        tview = self.data_app.master_tv
-        tview.data_source = tview.delegate = cls_ds(self.data_app)
+        m_view = self.data_app.master_view
+        m_view.prepare_view(cls_ds(self.data_app), self.add_item_tapped, self.edit_items_tapped)
 

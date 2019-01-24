@@ -5,32 +5,11 @@
         "nodes" : [
 
         ],
-        "frame" : "{{19, 134}, {356, 512}}",
-        "class" : "TableView",
-        "attributes" : {
-          "flex" : "WH",
-          "data_source_items" : "\n",
-          "row_height" : 44,
-          "frame" : "{{412, 284}, {200, 200}}",
-          "uuid" : "B7FD2D54-86A9-4A3D-B7B5-B880075CABB0",
-          "background_color" : "RGBA(1.0, 1.0, 1.0, 1.0)",
-          "data_source_number_of_lines" : 1,
-          "data_source_font_size" : 18,
-          "class" : "TableView",
-          "data_source_delete_enabled" : true,
-          "name" : "master_tv"
-        },
-        "selected" : false
-      },
-      {
-        "nodes" : [
-
-        ],
         "frame" : "{{387, 134}, {575, 512}}",
         "class" : "TextView",
         "attributes" : {
           "flex" : "WH",
-          "font_size" : 17,
+          "name" : "textview_detail",
           "editable" : true,
           "frame" : "{{412, 284}, {200, 200}}",
           "spellchecking_type" : "default",
@@ -38,7 +17,7 @@
           "uuid" : "DB1E97D6-FBA8-41A6-A4FA-0979E8205CF5",
           "alignment" : "left",
           "autocorrection_type" : "default",
-          "name" : "textview_detail",
+          "font_size" : 17,
           "font_name" : "<System>"
         },
         "selected" : false
@@ -47,33 +26,14 @@
         "nodes" : [
 
         ],
-        "frame" : "{{335, 84}, {43, 42}}",
-        "class" : "Button",
+        "frame" : "{{29, 70}, {350, 576}}",
+        "class" : "View",
         "attributes" : {
-          "name" : "button_additem",
-          "frame" : "{{472, 368}, {80, 32}}",
-          "title" : "Button",
-          "uuid" : "971A1755-F3E8-46F1-9042-D382D31BCE86",
-          "class" : "Button",
-          "font_size" : 15,
-          "image_name" : "iob:plus_round_256"
-        },
-        "selected" : false
-      },
-      {
-        "nodes" : [
-
-        ],
-        "frame" : "{{23, 84}, {43, 42}}",
-        "class" : "Button",
-        "attributes" : {
-          "font_size" : 15,
-          "frame" : "{{472, 368}, {80, 32}}",
-          "title" : "",
-          "uuid" : "53C8E4AE-F7A7-4393-931C-59B0132EADF4",
-          "class" : "Button",
-          "name" : "button_edit",
-          "image_name" : "iob:compose_256"
+          "custom_class" : "MyMasterView",
+          "frame" : "{{462, 334}, {100, 100}}",
+          "class" : "View",
+          "name" : "master_list",
+          "uuid" : "BE9BF925-6A42-4E94-A521-28CCD43DB03F"
         },
         "selected" : false
       }
@@ -81,11 +41,11 @@
     "frame" : "{{0, 0}, {1024, 768}}",
     "class" : "View",
     "attributes" : {
-      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
       "enabled" : true,
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
       "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
       "custom_class" : "MyView",
-      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
       "flex" : ""
     },
     "selected" : false

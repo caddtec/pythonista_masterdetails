@@ -1,4 +1,15 @@
 import ui
+import recerror
+
+
+def ab_add_button_tapped(sender):
+    raise recerror.MDNotImplementedError('The add_button hook in MDMasterListView ' +
+                                             'has not been provided...')
+
+
+def ab_edit_button_tapped(sender):
+    raise recerror.MDNotImplementedError('The edit_button hook in MDMasterListView ' +
+                                             'has not been provided...')
 
 
 class MDTableViewDataSource (object):
@@ -53,4 +64,91 @@ class MDTableViewDataSource (object):
     def tableview_title_for_delete_button(self, tableview, section, row):
         # Return the title for the 'swipe-to-***' button.
         return 'Delete'
+
+class MDMasterListView (ui.View):
+    def __init__(self):
+        self.table_view = None
+        self.nav = None
+    
+    @property
+    def list_view(self):
+        return self.table_view
+    
+    @property
+    def add_buttonitem(self):
+        return self.list_view.right_button_items[0]
+    
+    @property
+    def edit_buttonitem(self):
+        return self.list_view.left_button_items[0]
+    
+    @property
+    def list_title(self):
+        return self.table_view.name
+    
+    @list_title.setter
+    def list_title(self, value):
+        self.table_view.name = value
+    
+    @property
+    def view_title(self):
+        return self.nav.name
+    
+    @view_title.setter
+    def view_title(self, value):
+        self.nav.name = value
+    
+    def prepare_view(self, ds=None, add_hook=ab_add_button_tapped,
+                                    edit_hook=ab_edit_button_tapped):
+        self.table_view = ui.TableView(flex='WHLRTB')
+        self.table_view.allows_selection = True
+        self.table_view.allows_multiple_selection = False
+        self.table_view.right_button_items = ui.ButtonItem(image=ui.Image.named("typb:Plus"),
+                                                           action=add_hook),
+        self.table_view.left_button_items = ui.ButtonItem(image=ui.Image.named('typb:Edit'),
+                                                          action=edit_hook),
+        self.table_view.name = 'TV Name'
+        
+        if ds != None:
+            self.table_view.data_source = self.table_view.delegate = ds
+        
+        self.nav = ui.NavigationView(self.table_view)
+        self.nav.navigation_bar_hidden = False
+        self.nav.frame = self.bounds
+        self.nav.flex = "WH"
+        self.nav.name = "Master List"
+        self.add_subview(self.nav)
+
+def main_sample():
+    lst = ui.ListDataSource(['Item 1', 'Item 2', 'Item 3', 'Item 4'])
+    table_view = ui.TableView(flex='WHLRTB')
+    table_view.allows_selection = True
+    table_view.allows_multiple_selection = False
+    table_view.right_button_items = ui.ButtonItem(image=ui.Image.named("typb:Plus")),
+    table_view.left_button_items = ui.ButtonItem(image=ui.Image.named('typb:Edit')),
+    table_view.name = 'Table View Name'
+    table_view.data_source = table_view.delegate = lst
+    
+    nav = ui.NavigationView(table_view)
+    nav.navigation_bar_hidden = False
+    nav.name = "Master List"
+    nav.flex = "WHLRTB"
+    nav.present('sheet')
+
+def main_pyui():
+    lst = ui.ListDataSource(['Pyui 1', 'Pyui 2', 'Pyui 3', 'Pyui 4'])
+    v = ui.load_view('mastest')
+    v.prepare_view(lst)
+    v.present('sheet')
+
+def main():
+    lst = ui.ListDataSource(['Item 1', 'Item 2', 'Item 3', 'Item 4'])
+    v = MDMasterListView(frame=(0,0,1000,500))
+    v.prepare_view(lst)
+    v.present('sheet')
+
+if __name__ == '__main__':
+    # main_sample()
+    # main()
+    main_pyui()
 
