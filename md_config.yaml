@@ -1,0 +1,17 @@
+ui:
+    layout: one_two
+    identifiers:
+        master:
+            name: master_list
+            pyui: __default__
+        details:
+            - name: detail_view
+              pyui: sample_detail
+            - name: more_detail_view
+              pyui: sample_more
+    detail_items:
+        - more_detail_view:
+            - textfield_title
+        - detail_view:
+            - textview_detail
+

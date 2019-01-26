@@ -1,0 +1,62 @@
+[
+  {
+    "nodes" : [
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{29, 70}, {350, 576}}",
+        "class" : "View",
+        "attributes" : {
+          "custom_class" : "recmaster.MDMasterListView",
+          "frame" : "{{462, 334}, {100, 100}}",
+          "class" : "View",
+          "name" : "master_list",
+          "uuid" : "92567244-EB5C-48F6-8871-5B20D030471B"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{387, 156}, {574, 490}}",
+        "class" : "View",
+        "attributes" : {
+          "custom_class" : "recdetail.MDDetailView",
+          "frame" : "{{462, 334}, {100, 100}}",
+          "class" : "View",
+          "name" : "detail_view",
+          "uuid" : "9292DB9A-61FA-48B7-B87B-5FB65337D579"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{387, 70}, {574, 78}}",
+        "class" : "View",
+        "attributes" : {
+          "custom_class" : "recdetail.MDDetailView",
+          "frame" : "{{462, 334}, {100, 100}}",
+          "class" : "View",
+          "name" : "more_detail_view",
+          "uuid" : "8803ABE3-361C-4942-A8C2-092C18FF446C"
+        },
+        "selected" : false
+      }
+    ],
+    "frame" : "{{0, 0}, {1024, 768}}",
+    "class" : "View",
+    "attributes" : {
+      "custom_class" : "MDView",
+      "enabled" : true,
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "flex" : ""
+    },
+    "selected" : false
+  }
+]

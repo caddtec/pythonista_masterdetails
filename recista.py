@@ -1,7 +1,28 @@
 import recerror
 import ui
 import recmaster
+import recdetail
 import console
+import yaml
+
+
+def load_config(file_name):
+    with open(file_name) as yfile:
+        cfg = yaml.load(yfile)
+    
+    portal_view = ui.load_view(cfg['ui']['layout'])
+    detail_views = {}
+    for dviews in cfg['ui']['identifiers']['details']:
+        dv = ui.load_view(dviews['pyui'])
+        dv_name = dviews['name']
+        portal_view[dv_name].prepare_view(dv)
+        detail_views[dv_name] = dv
+    
+    return portal_view, detail_views, cfg
+
+
+class MDDataSource (recmaster.MDTableViewDataSource):
+    pass
 
 
 class MDApp (object):
@@ -147,14 +168,17 @@ class MDView (ui.View):
     def edit_items_tapped(self, sender):
         self.data_app.edit_mode = not self.data_app.edit_mode
     
-    def prepare_view(self, app, view_name=None, cls_ds=recmaster.MDTableViewDataSource, detail_items=[]):
+    def prepare_view(self, config, app, view_name=None, cls_ds=recmaster.MDTableViewDataSource):
         if view_name != None:
             self.name = view_name
-        self.data_app = app
         
+        self.data_app = app
+        detail_items = config['ui']['detail_items']
         detail_dict = dict(master_list=self['master_list'])
-        for item in detail_items:
-            detail_dict[item] = self['detail_view'].detail_view[item]
+        for item_dict in detail_items:
+            for dv_name in item_dict:
+                for component_name in item_dict[dv_name]:
+                    detail_dict[component_name] = self[dv_name].detail_view[component_name]
         self.data_app.components = detail_dict
         
         m_view = self.data_app.master_view
