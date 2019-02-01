@@ -14,8 +14,12 @@ def load_config(file_name):
     detail_views = {}
     for dviews in cfg['ui']['identifiers']['details']:
         dv = ui.load_view(dviews['pyui'])
+        dv.name = dviews['title']
         dv_name = dviews['name']
-        portal_view[dv_name].prepare_view(dv)
+        nav_flag = True
+        if 'navigation' in dviews:
+            nav_flag = bool(dviews['navigation'])
+        portal_view[dv_name].prepare_view(dv, nav_flag)
         detail_views[dv_name] = dv
     
     return portal_view, detail_views, cfg
@@ -195,4 +199,9 @@ class MDView (ui.View):
             m_ds.header_title = config['labels']['master_list.header.title']
         if 'master_list.delete.label' in config['labels']:
             m_ds.del_btn_label = config['labels']['master_list.delete.label']
+        
+        pres = 'sheet'
+        if 'present' in config['ui']:
+            pres = config['ui']['present']
+        self.present(pres)
 

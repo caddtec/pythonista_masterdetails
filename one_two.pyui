@@ -5,13 +5,14 @@
         "nodes" : [
 
         ],
-        "frame" : "{{29, 70}, {350, 576}}",
+        "frame" : "{{29, 70}, {350, 648}}",
         "class" : "View",
         "attributes" : {
-          "custom_class" : "recmaster.MDMasterListView",
-          "frame" : "{{462, 334}, {100, 100}}",
-          "class" : "View",
           "name" : "master_list",
+          "frame" : "{{462, 334}, {100, 100}}",
+          "flex" : "WR",
+          "custom_class" : "recmaster.MDMasterListView",
+          "class" : "View",
           "uuid" : "92567244-EB5C-48F6-8871-5B20D030471B"
         },
         "selected" : false
@@ -20,13 +21,14 @@
         "nodes" : [
 
         ],
-        "frame" : "{{387, 156}, {574, 490}}",
+        "frame" : "{{387, 159}, {574, 559}}",
         "class" : "View",
         "attributes" : {
-          "custom_class" : "recdetail.MDDetailView",
-          "frame" : "{{462, 334}, {100, 100}}",
-          "class" : "View",
           "name" : "detail_view",
+          "frame" : "{{462, 334}, {100, 100}}",
+          "flex" : "WHLT",
+          "custom_class" : "recdetail.MDDetailView",
+          "class" : "View",
           "uuid" : "9292DB9A-61FA-48B7-B87B-5FB65337D579"
         },
         "selected" : false
@@ -35,13 +37,14 @@
         "nodes" : [
 
         ],
-        "frame" : "{{387, 70}, {574, 78}}",
+        "frame" : "{{387, 70}, {574, 81}}",
         "class" : "View",
         "attributes" : {
-          "custom_class" : "recdetail.MDDetailView",
-          "frame" : "{{462, 334}, {100, 100}}",
-          "class" : "View",
           "name" : "more_detail_view",
+          "frame" : "{{462, 334}, {100, 100}}",
+          "flex" : "WHLB",
+          "custom_class" : "recdetail.MDDetailView",
+          "class" : "View",
           "uuid" : "8803ABE3-361C-4942-A8C2-092C18FF446C"
         },
         "selected" : false
@@ -50,11 +53,11 @@
     "frame" : "{{0, 0}, {1024, 768}}",
     "class" : "View",
     "attributes" : {
-      "custom_class" : "MDView",
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
       "enabled" : true,
       "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "custom_class" : "MDView",
       "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
-      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
       "flex" : ""
     },
     "selected" : false

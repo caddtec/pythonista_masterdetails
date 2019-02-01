@@ -30,5 +30,3 @@ import pprint
 pprint.pprint(cfg, width=1)
 
 v.prepare_view(cfg, MyDataApp([sample.ItemDAO('Example', 'My Example Description')]))
-v.present('sheet')
-

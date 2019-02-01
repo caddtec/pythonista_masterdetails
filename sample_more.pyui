@@ -5,30 +5,31 @@
         "nodes" : [
 
         ],
-        "frame" : "{{6, 25}, {573, 32}}",
+        "frame" : "{{6, 25}, {442, 32}}",
         "class" : "TextField",
         "attributes" : {
-          "name" : "textfield_title",
+          "font_size" : 17,
+          "flex" : "W",
           "frame" : "{{193, 24}, {200, 32}}",
           "spellchecking_type" : "default",
           "class" : "TextField",
           "uuid" : "B943B4B4-66CB-4DFB-8FE7-035012F85190",
           "alignment" : "left",
           "autocorrection_type" : "default",
-          "font_size" : 17,
+          "name" : "textfield_title",
           "font_name" : "<System>"
         },
         "selected" : false
       }
     ],
-    "frame" : "{{0, 0}, {585, 80}}",
+    "frame" : "{{0, 0}, {454, 86}}",
     "class" : "View",
     "attributes" : {
-      "custom_class" : "",
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
       "enabled" : true,
       "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "custom_class" : "",
       "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
-      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
       "flex" : ""
     },
     "selected" : false

@@ -1,4 +1,5 @@
 ui:
+    present: full_screen
     layout: one_two
     identifiers:
         master:
@@ -7,8 +8,11 @@ ui:
         details:
             - name: detail_view
               pyui: sample_detail
+              title: 'Detail I'
             - name: more_detail_view
               pyui: sample_more
+              title: 'Detail II'
+              navigation: False
     detail_items:
         - more_detail_view:
             - textfield_title
