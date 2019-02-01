@@ -13,8 +13,10 @@ def ab_edit_button_tapped(sender):
 
 
 class MDTableViewDataSource (object):
-    def __init__(self, data):
+    def __init__(self, data, header_title='List of Items', del_btn_label='Delete'):
         self.data = data
+        self.header_title = header_title
+        self.del_btn_label = del_btn_label
     
     def tableview_number_of_sections(self, tableview):
         # Return the number of sections (defaults to 1)
@@ -33,7 +35,7 @@ class MDTableViewDataSource (object):
     def tableview_title_for_header(self, tableview, section):
         # Return a title for the given section.
         # If this is not implemented, no section headers will be shown.
-        return 'List of Items'
+        return self.header_title
 
     def tableview_can_delete(self, tableview, section, row):
         # Return True if the user should be able to delete the given row.
@@ -63,7 +65,7 @@ class MDTableViewDataSource (object):
 
     def tableview_title_for_delete_button(self, tableview, section, row):
         # Return the title for the 'swipe-to-***' button.
-        return 'Delete'
+        return self.del_btn_label
 
 class MDMasterListView (ui.View):
     def __init__(self):
@@ -98,8 +100,8 @@ class MDMasterListView (ui.View):
     def view_title(self, value):
         self.nav.name = value
     
-    def prepare_view(self, ds=None, add_hook=ab_add_button_tapped,
-                                    edit_hook=ab_edit_button_tapped):
+    def prepare_view(self, ds=None, list_title=None, add_hook=ab_add_button_tapped,
+                     edit_hook=ab_edit_button_tapped):
         self.table_view = ui.TableView(flex='WHLRTB')
         self.table_view.allows_selection = True
         self.table_view.allows_multiple_selection = False
@@ -107,7 +109,9 @@ class MDMasterListView (ui.View):
                                                            action=add_hook),
         self.table_view.left_button_items = ui.ButtonItem(image=ui.Image.named('typb:Edit'),
                                                           action=edit_hook),
-        self.table_view.name = 'TV Name'
+        
+        if list_title != None:
+            self.table_view.name = list_title
         
         if ds != None:
             self.table_view.data_source = self.table_view.delegate = ds

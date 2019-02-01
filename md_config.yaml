@@ -14,4 +14,9 @@ ui:
             - textfield_title
         - detail_view:
             - textview_detail
+labels:
+    master_list.header.title: 'Config List of Items II'
+    master_list.title: 'Master List SDK III'
+    master_list.delete.label: 'Erase II'
+    main_view.title: 'Config Title for Master-Details SDK II'
 

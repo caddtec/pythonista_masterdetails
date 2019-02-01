@@ -168,9 +168,11 @@ class MDView (ui.View):
     def edit_items_tapped(self, sender):
         self.data_app.edit_mode = not self.data_app.edit_mode
     
-    def prepare_view(self, config, app, view_name=None, cls_ds=recmaster.MDTableViewDataSource):
+    def prepare_view(self, config, app, view_name=None, cls_ds=MDDataSource):
         if view_name != None:
             self.name = view_name
+        elif 'main_view.title' in config['labels']:
+            self.name = config['labels']['main_view.title']
         
         self.data_app = app
         detail_items = config['ui']['detail_items']
@@ -182,5 +184,15 @@ class MDView (ui.View):
         self.data_app.components = detail_dict
         
         m_view = self.data_app.master_view
-        m_view.prepare_view(cls_ds(self.data_app), self.add_item_tapped, self.edit_items_tapped)
+        m_ds = cls_ds(self.data_app)
+        
+        list_title = None
+        if 'master_list.title' in config['labels']:
+            list_title = config['labels']['master_list.title']
+        
+        m_view.prepare_view(m_ds, list_title, self.add_item_tapped, self.edit_items_tapped)
+        if 'master_list.header.title' in config['labels']:
+            m_ds.header_title = config['labels']['master_list.header.title']
+        if 'master_list.delete.label' in config['labels']:
+            m_ds.del_btn_label = config['labels']['master_list.delete.label']
 

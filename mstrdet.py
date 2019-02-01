@@ -22,16 +22,6 @@ class MyDataApp (recista.MDApp):
     def save(self, key):
         self[key].description = self.description
 
-class MyTableViewDataSource (recista.MDDataSource):
-    def tableview_title_for_header(self, tableview, section):
-        # Return a title for the given section.
-        # If this is not implemented, no section headers will be shown.
-        return 'Master List P2'
-
-    def tableview_title_for_delete_button(self, tableview, section, row):
-        # Return the title for the 'swipe-to-***' button.
-        return 'Erase P2'
-
 
 v, _, cfg = recista.load_config('md_config.yaml')
 
@@ -39,8 +29,6 @@ v, _, cfg = recista.load_config('md_config.yaml')
 import pprint
 pprint.pprint(cfg, width=1)
 
-v.prepare_view(cfg,
-               MyDataApp([sample.ItemDAO('Example', 'My Example Description')]),
-               'Experimentation with Master-Details Phase 2',
-               MyTableViewDataSource)
+v.prepare_view(cfg, MyDataApp([sample.ItemDAO('Example', 'My Example Description')]))
 v.present('sheet')
+
