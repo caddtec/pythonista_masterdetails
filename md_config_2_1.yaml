@@ -1,16 +1,11 @@
 ui:
     present: sheet
-    layout: two_up_down
-    settings:
-        master_list:
-            type: __default__
-        lower_detail:
-            scroll: True
+    layout: two_one
     identifiers:
         master:
             pyui: __default__
         details:
-            - name: lower_detail
+            - name: upper_detail
               pyui: sample_more
               id: key_widget
               title: 'Detail II'
@@ -20,9 +15,10 @@ ui:
               id: form_widget
               title: 'Detail Lower'
     detail_items:
-        - lower_detail:
+        - upper_detail:
             - key_widget:
                 - textfield_title
+        - lower_detail:
             - form_widget:
                 - textview_detail
 labels:

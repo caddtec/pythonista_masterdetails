@@ -18,10 +18,11 @@ def load_config(file_name):
         dv.name = dviews['title']
         dv_name = dviews['name']
         
-        if dv_name in cfg['ui']['settings']:
-            dv_settings = cfg['ui']['settings'][dv_name]
-            if bool(dv_settings.get('scroll', False)):
-                dv.add_subview(ui.ScrollView())
+        if 'settings' in cfg['ui']:
+            if dv_name in cfg['ui']['settings']:
+                dv_settings = cfg['ui']['settings'][dv_name]
+                if bool(dv_settings.get('scroll', False)):
+                    dv.add_subview(ui.ScrollView())
         
         portal_view[dv_name].prepare_view(dv, bool(dviews.get('navigation', True)))
         detail_views[dv_name] = dv
