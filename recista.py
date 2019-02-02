@@ -14,12 +14,16 @@ def load_config(file_name):
     detail_views = {}
     for dviews in cfg['ui']['identifiers']['details']:
         dv = ui.load_view(dviews['pyui'])
+        dv.unique_id = dviews['id']
         dv.name = dviews['title']
         dv_name = dviews['name']
-        nav_flag = True
-        if 'navigation' in dviews:
-            nav_flag = bool(dviews['navigation'])
-        portal_view[dv_name].prepare_view(dv, nav_flag)
+        
+        if dv_name in cfg['ui']['settings']:
+            dv_settings = cfg['ui']['settings'][dv_name]
+            if bool(dv_settings.get('scroll', False)):
+                dv.add_subview(ui.ScrollView())
+        
+        portal_view[dv_name].prepare_view(dv, bool(dviews.get('navigation', True)))
         detail_views[dv_name] = dv
     
     return portal_view, detail_views, cfg
@@ -181,10 +185,17 @@ class MDView (ui.View):
         self.data_app = app
         detail_items = config['ui']['detail_items']
         detail_dict = dict(master_list=self['master_list'])
-        for item_dict in detail_items:
-            for dv_name in item_dict:
-                for component_name in item_dict[dv_name]:
-                    detail_dict[component_name] = self[dv_name].detail_view[component_name]
+        # List of detail view dictionnaries in layout
+        for loview_dict in detail_items:
+            # Get key name of the layout detail view
+            for loview_name in loview_dict:
+                # List of widgets in detail view
+                for widget_dict in loview_dict[loview_name]:
+                    for widget_name in widget_dict:
+                        # List of components in widget
+                        for component_name in widget_dict[widget_name]:
+                            widget_view = self[loview_name].detail_view[widget_name]
+                            detail_dict[component_name] = widget_view[component_name]
         self.data_app.components = detail_dict
         
         m_view = self.data_app.master_view

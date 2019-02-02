@@ -1,0 +1,47 @@
+[
+  {
+    "nodes" : [
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 6}, {1012, 223}}",
+        "class" : "View",
+        "attributes" : {
+          "custom_class" : "recmaster.MDMasterListView",
+          "frame" : "{{462, 334}, {100, 100}}",
+          "class" : "View",
+          "name" : "master_list",
+          "uuid" : "50D2D808-A3AE-4BA9-9D7E-2ADBFFF8A22B"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 237}, {1012, 525}}",
+        "class" : "View",
+        "attributes" : {
+          "custom_class" : "recdetail.MDDetailView",
+          "frame" : "{{462, 334}, {100, 100}}",
+          "class" : "View",
+          "name" : "lower_detail",
+          "uuid" : "A97D3CD9-7501-4014-AA8A-80D084802C22"
+        },
+        "selected" : false
+      }
+    ],
+    "frame" : "{{0, 0}, {1024, 768}}",
+    "class" : "View",
+    "attributes" : {
+      "custom_class" : "MDView",
+      "enabled" : true,
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "flex" : ""
+    },
+    "selected" : false
+  }
+]

@@ -9,7 +9,7 @@
         "class" : "TextView",
         "attributes" : {
           "flex" : "WH",
-          "name" : "textview_detail",
+          "font_size" : 17,
           "editable" : true,
           "frame" : "{{223, 211}, {200, 200}}",
           "spellchecking_type" : "default",
@@ -17,7 +17,7 @@
           "uuid" : "9840D5A7-906F-45BF-A2E5-C08BA6E47811",
           "alignment" : "left",
           "autocorrection_type" : "default",
-          "font_size" : 17,
+          "name" : "textview_detail",
           "font_name" : "<System>"
         },
         "selected" : false
@@ -26,6 +26,7 @@
     "frame" : "{{0, 0}, {645, 622}}",
     "class" : "View",
     "attributes" : {
+      "custom_class" : "recdetail.MDDetailViewWidget",
       "enabled" : true,
       "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
       "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
