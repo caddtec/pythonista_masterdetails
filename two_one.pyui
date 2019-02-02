@@ -5,31 +5,14 @@
         "nodes" : [
 
         ],
-        "frame" : "{{6, 6}, {356, 756}}",
+        "frame" : "{{668, 6}, {350, 756}}",
         "class" : "View",
         "attributes" : {
-          "name" : "master_list",
-          "frame" : "{{462, 334}, {100, 100}}",
-          "flex" : "WR",
           "custom_class" : "recmaster.MDMasterListView",
-          "class" : "View",
-          "uuid" : "92567244-EB5C-48F6-8871-5B20D030471B"
-        },
-        "selected" : false
-      },
-      {
-        "nodes" : [
-
-        ],
-        "frame" : "{{370, 95}, {648, 667}}",
-        "class" : "View",
-        "attributes" : {
-          "name" : "lower_detail",
           "frame" : "{{462, 334}, {100, 100}}",
-          "flex" : "WHLT",
-          "custom_class" : "recdetail.MDDetailView",
           "class" : "View",
-          "uuid" : "9292DB9A-61FA-48B7-B87B-5FB65337D579"
+          "name" : "master_list",
+          "uuid" : "760A7574-626E-44D9-8732-6FB296911E78"
         },
         "selected" : false
       },
@@ -37,15 +20,29 @@
         "nodes" : [
 
         ],
-        "frame" : "{{370, 6}, {648, 81}}",
+        "frame" : "{{6, 6}, {654, 91}}",
         "class" : "View",
         "attributes" : {
+          "custom_class" : "recdetail.MDDetailView",
+          "frame" : "{{462, 334}, {100, 100}}",
+          "class" : "View",
           "name" : "upper_detail",
-          "frame" : "{{462, 334}, {100, 100}}",
-          "flex" : "WHLB",
+          "uuid" : "1506BD44-D0DA-4304-B9EB-1D0E8682527B"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 105}, {654, 657}}",
+        "class" : "View",
+        "attributes" : {
           "custom_class" : "recdetail.MDDetailView",
+          "frame" : "{{462, 334}, {100, 100}}",
           "class" : "View",
-          "uuid" : "8803ABE3-361C-4942-A8C2-092C18FF446C"
+          "name" : "lower_detail",
+          "uuid" : "948548BC-0011-4483-8227-9847EA1226BF"
         },
         "selected" : false
       }
@@ -53,12 +50,13 @@
     "frame" : "{{0, 0}, {1024, 768}}",
     "class" : "View",
     "attributes" : {
-      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "flex" : "",
+      "custom_class" : "MDView",
       "enabled" : true,
       "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
-      "custom_class" : "MDView",
       "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
-      "flex" : ""
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "name" : ""
     },
     "selected" : false
   }

@@ -1,26 +1,24 @@
 ui:
-    present: full_screen
-    layout: one_two
+    present: sheet
+    layout: two_one
     identifiers:
         master:
-            name: master_list
             pyui: __default__
         details:
-            - name: detail_view
+            - name: lower_detail
               pyui: sample_detail
-              title: 'Detail I'
-            - name: more_detail_view
+              title: 'Detail Lower'
+            - name: upper_detail
               pyui: sample_more
               title: 'Detail II'
               navigation: False
     detail_items:
-        - more_detail_view:
+        - upper_detail:
             - textfield_title
-        - detail_view:
+        - lower_detail:
             - textview_detail
 labels:
     master_list.header.title: 'Config List of Items II'
     master_list.title: 'Master List SDK III'
     master_list.delete.label: 'Erase II'
     main_view.title: 'Config Title for Master-Details SDK II'
-
